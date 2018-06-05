@@ -1,0 +1,131 @@
+/* pages/billmanage/billmanage.wxss */
+page{
+  background: #f2f2f2;
+}
+
+
+.cardWrap, .cardListWrap{
+  display: block;
+  margin: 100rpx 0 80rpx;
+}
+.listEvery{
+  display: block;
+  margin: 0 30rpx 20rpx;
+  border-radius: 5px;
+  background: #fff;
+}
+.listEvery>view{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx;
+  font-size: 28rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.listEvery view text{
+  font-size: 28rpx;
+}
+.listEvery view text:last-child{
+  color: #fa7737;
+}
+.listEvery view:nth-child(2){
+  display: block;
+}
+.listEvery view:nth-child(2) view{
+  line-height: 60rpx;
+}
+.listEvery view:nth-child(2) view:last-child{
+  text-align: right;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.listEvery view:nth-child(2) view text{
+  color: #fa7737;
+}
+.listEvery .last{
+  /* width: 100%; */
+  padding: 15rpx;
+}
+.listEvery .last button{
+  margin: 0;
+  /* border: 1px solid #fa7737;
+  border-radius: 5px;
+  background: #fff;
+  color: #fa7737; */
+  font-size: 26rpx;
+}
+.btnConfirm{
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 20rpx);
+  display: flex;
+  display: -webkit-flex;
+  padding-left: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+.btnConfirm checkbox{
+  transform: scale(.8);
+}
+.btnConfirm .checkbox{
+  font-size: 32rpx;
+}
+.btnConfirm view{
+  padding: 15rpx 30rpx;
+  font-size: 32rpx;
+}
+.btnConfirm view text{
+  color: #fa7737;
+}
+.btnConfirm view:nth-child(2){
+  width: calc(100% - 350rpx);
+}
+
+.cardListWrap>view{
+  margin: 20rpx;
+  background: #fff;
+  border-radius: 5px;
+  padding: 10rpx;
+}
+.cardListWrap .msg{
+  border-bottom: 1rpx solid #ccc;
+}
+.cardListWrap .msg view{
+  display: flex;
+  display: -webkit-flex;
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+.cardListWrap .msg view text{
+  margin-right: 100rpx;
+  font-size: 28rpx;
+  color: #fa7737;
+}
+.cardListWrap .msg view:last-child{
+  display: block;
+  text-align: right;
+  font-size: 24rpx;
+  line-height: 50rpx;
+}
+.bottomMsg{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+}
+.bottomMsg text{
+  font-size: 26rpx;
+  color: #fa7737;
+}
+.bottomMsg navigator{
+  margin: 10rpx 0;
+  padding: 10rpx 20rpx;
+  border: 1px solid #fa7737;
+  color: #fa7737;
+}

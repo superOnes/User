@@ -1,0 +1,57 @@
+<!--pages/billmanage/billmanage.wxml-->
+<view>
+  <view class='tab'>
+    <view bindtap='tabToggle'><text class='{{list ? "" : "active"}}'>发票列表</text></view>
+    <view bindtap='tabToggle1'><text class='{{blag ? "" : "active"}}'>索要发票</text></view>
+  </view>
+
+    <view hidden='{{blag}}' class='cardWrap'>
+      <checkbox-group class="radio-group" bindchange="radioChange">
+        <label class="radio listEvery" wx:for="{{items}}" wx:key="key" bindtap='labelTap' data-id='{{item.id}}'>
+          <view><text>订单编号为：{{item.order_code}}</text><text>待开票</text></view>
+          <view>
+            <view><text>寄：</text>{{item.start_province_str}}{{item.start_city_str}}{{item.start_area_str}}{{item.start_address}}</view>
+            <view><text>收：</text>{{item.end_province_str}}{{item.end_city_str}}{{item.end_area_str}}{{item.end_address}}</view>
+            <view>订单状态：<text>{{item.status_str}}</text> 金额：￥<text>{{item.deal_price/100}}</text></view>
+            <view>{{item.submit_time}}</view>
+          </view>
+          <view class='last'>
+            <checkbox name='value' value='{{item.deal_price/100}}' checked='{{allCheckeds}}'/>
+            <navigator hover-class="none" url='/pages/online/online'><button class='btnColor' size='mini'>联系客服</button></navigator>
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
+    <view hidden='{{list}}' class='cardListWrap'>
+      <view wx:for="{{itemListS}}" wx:key="key">
+        <view class='msg'>
+          <view>发票抬头：{{item.title}}</view>
+          <view>纳税人编号：{{item.dutynum}}</view>
+          <view>
+            <view>金额：<text>￥{{item.money/100}}</text></view>   
+            <view>发票性质：纸质发票</view>   
+          </view>
+          <view>收取方式：<text>快递</text></view>
+          <view>{{item.submit_time}}</view>
+        </view>
+        <view class='bottomMsg'>
+          <text>处理中</text>
+          <navigator hover-class='none' url='/pages/billdes/billdes?id={{item.id}}'>点击查看详情</navigator>
+        </view>
+      </view>
+    </view>
+    <!-- 为空显示 -->
+  <view class='btnConfirm' hidden='{{blagBottm}}'>
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox checked='{{allChecked}}'/>全选
+      </label>
+    </checkbox-group>
+    <view>合计：￥<text>{{lastPrice}}</text></view>
+    <view class='btnColor' bindtap='goBlag'>去索取</view>
+  </view>
+  <view hidden='{{isEmpty}}' class='isEmpty'>
+    <image src='../../images/no_orders@2x.png'></image>
+    <view>对不起，您还没有发票!</view>
+  </view>
+</view>

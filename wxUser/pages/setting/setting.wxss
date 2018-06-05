@@ -1,0 +1,39 @@
+/* pages/setting/setting.wxss */
+page{
+  background: #f2f2f2;
+}
+.settingWrap{
+  margin: 40rpx 0;
+  padding: 0 40rpx;
+  background: #fff;
+}
+.settingWrap navigator{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  align-items: center;
+  padding: 20rpx;
+}
+.settingWrap navigator:last-of-type{
+  border: none;
+}
+.settingWrap navigator text{
+  width: calc(100% - 80rpx);
+}
+.settingWrap navigator icon:first-child image{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 20rpx 0 -10rpx;
+}
+.settingWrap navigator:last-of-type text{
+  color: #ee0101;
+}
+.settingWrap navigator icon text{
+  color: #ee0101;
+}
+.settingWrap navigator icon image{
+  display: block;
+  width: 15rpx;
+  height: 25rpx;
+}

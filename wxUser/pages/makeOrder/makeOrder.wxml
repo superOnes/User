@@ -1,0 +1,114 @@
+<!--pages/makeOrder/makeOrder.wxml-->
+<view class='container'>
+  <view class='addressWrap'>
+    <view>
+      <icon><image src='../../images/conmm_start@2x.png'></image></icon>
+      <navigator hover-class="none" url='/pages/addressbook/addressbook?a=start'>
+        <text>{{consignorPeron}}</text>
+        <text>{{consignorAddress}}</text>
+      </navigator>
+      <navigator hover-class="none" url='/pages/booklistselect/booklistselect?a=start'>
+        <image src='../../images/conmm_address-book@2x.png'></image>
+      </navigator>
+    </view>
+    <view>
+      <icon><image src='../../images/comm_destination@2x.png'></image></icon>
+      <navigator hover-class="none" url='/pages/addressbook/addressbook?a=end'>
+        <text>{{consigneePeron}}</text>
+        <text>{{consigneeAddress}}</text>
+      </navigator>
+      <navigator hover-class="none" url='/pages/booklistselect/booklistselect?a=end'>
+        <image src='../../images/conmm_address-book@2x.png'></image>
+      </navigator>
+    </view>
+  </view>
+  <view class='otherMsg'>
+    <view>
+      <block>
+        <icon class='iconSize'><image src='../../images/conmm_goods@2x.png'></image></icon>
+        <text>货物信息：</text>
+      </block>
+      <navigator hover-class="none" url='/pages/goodsinfo/goodsinfo'>
+        <text space='true'>{{cargoInfo}}</text>
+        <icon class='iconSize1'><image src='../../images/comm_back_right@2x.png'></image></icon>
+      </navigator>
+    </view>
+    <view>
+      <block>
+        <icon class='iconSize'><image src='../../images/conmm_value_added@2x.png'></image></icon>
+        <text>增值服务：</text>
+      </block>
+      <navigator hover-class="none">
+        <text>暂未开通</text>
+        <icon class='iconSize1'><image src='../../images/comm_back_right@2x.png'></image></icon>
+      </navigator>
+    </view>
+    <view>
+      <block>
+        <icon class='iconSize'><image src='../../images/conmm_payment_method@2x.png'></image></icon>
+        <text>付款方式：</text>
+      </block>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{payArray}}">
+        <view class="picker">{{payArray[index]}}</view>
+        <icon class='iconSize1'><image src='../../images/comm_back_right@2x.png'></image></icon>
+      </picker>
+    </view>
+    <view>
+      <block>
+        <icon class='iconSize'><image src='../../images/conmm_information@2x.png'></image></icon>
+        <text>对派送员说：</text>
+      </block>
+      <navigator hover-class="none" bindtap='hiddenmodalput'>
+        <text>{{remarksTip}}</text>
+        <icon class='iconSize1'><image src='../../images/comm_back_right@2x.png'></image></icon>
+      </navigator>
+      <modal hidden="{{hiddenmodalput}}" title="请输入您对派送员的话" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+          <textarea cursor-spacing='50' bindinput='remarksChange' type='text' placeholder="请输入内容" value='{{remarks}}'></textarea>
+      </modal>  
+    </view>
+  </view>
+  <view class='otherOptions'>
+    <view>
+      <view>
+        <icon class='iconSize'><image src='../../images/time.png'></image></icon>
+        <text>预约取货时间</text>
+      </view>
+      <view>
+          <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="bindDateChange" range="{{dateTimeArray}}">
+            <view class="tui-picker-detail">
+              <!-- {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}} -->      {{dateTimeCon}}
+              <icon class='iconSize1'>
+                <image src='../../images/comm_back_right@2x.png'></image>
+              </icon>
+            </view>
+          </picker>
+      </view>
+    </view>
+    <view>
+      <radio-group class="radio-group" bindtap="radioChange">
+        <label class="radio">
+          <radio value="1" checked="{{isChecked}}"/><text>上门提货</text>
+        </label>
+      </radio-group>
+      <radio-group class="radio-group" bindtap="radioChange1">
+        <label class="radio">
+          <radio value="1" checked="{{isChecked1}}"/><text>派哥送货</text>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class='otherTip'>
+    <radio-group class="radio-group">
+      <label class="radio">
+        <radio value="1" checked="true"/>
+        <text>本人承诺所运货物非违禁品且符合法律法规，实际价格以派送员上门取货为准！</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class='makeOrder'>
+    <text>预估价<text>￥{{freight}}</text></text>
+    <view>
+      <text class='{{okBtn ? "okBtn" : "" }}' bindtap='makeOrderTap'>下 单</text>
+    </view>
+  </view>
+</view>

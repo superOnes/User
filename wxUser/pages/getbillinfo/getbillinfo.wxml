@@ -1,0 +1,45 @@
+<!--pages/getbillinfo/getbillinfo.wxml-->
+<view>
+  <form bindsubmit="formSubmit" class='msgWrap'>
+    <text></text>
+    <view class='invoiceMsg'>
+      <view>公司抬头入识别号</view>
+      <view>
+        <label for='consignor_title'>发票抬头：</label>
+        <input name='consignor_title' id='consignor_title' placeholder='请输入发票抬头'/>
+      </view>
+      <view>
+        <label for='dutynum'>纳税人识别号：</label>
+        <input name='dutynum' id='dutynum' placeholder='请输入识别号'/>
+      </view>
+      <view>
+        <label>发票性质：</label>
+        <input disabled value='纸质发票'/>
+      </view>
+    </view>
+    <text></text>
+    <view class='peopleMsg'>
+      <view>联系人和地址</view>
+      <view>
+        <label for='consignor_name'>姓名：</label>
+        <input name='consignor_name' id='consignor_name' placeholder='请输入姓名'/>
+      </view>
+      <view>
+        <label for='consignor_mobile'>电话：</label>
+        <input name='consignor_mobile' id='consignor_mobile' placeholder='请输入电话'/>
+      </view>
+      <view>
+        <label for='address'>收件地址：</label>
+        <input id='address' disabled bindtap='chooseLocation' value='{{address}}' placeholder='请选择地址'/>
+        <input hidden='true' name='province' value='{{province_code}}'/>
+        <input hidden='true' name='city' value='{{city_code}}'/>
+        <input hidden='true' name='area' value='{{area_code}}'/>
+      </view>
+      <view>
+        <label for='start_full_address'>详细地址：</label>
+        <input name='start_full_address' value='{{start_full_address}}' id='start_full_address' placeholder='请输入详细地址'/>
+      </view>
+    </view>
+    <view class='submit'><button form-type='submit' class='btnColor'>提交</button></view>
+  </form>
+</view>

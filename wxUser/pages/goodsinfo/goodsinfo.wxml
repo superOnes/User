@@ -1,0 +1,50 @@
+<!--pages/goodsinfo/goodsinfo.wxml-->
+<view class='goodsinfo'>
+  <view class='goodsInfoNum'>
+    <view>
+      <text>货物{{infoType}}</text>
+      <text bindtap='toggleType'>填写货物{{toggleType}}</text>
+    </view>
+    <view>
+      <icon bindtap='minusCount'>
+        <image src='../../images/cargo_information_subtraction@2x.png'></image>
+      </icon>
+      <input value='{{goods_count}}' bindinput='countChange'></input>
+      <icon bindtap='plusCount'>
+        <image src='../../images/cargo_information_add@2x.png'></image>
+      </icon>
+    </view>
+    <view>
+      <view>1.重货请填写重量，体积大质量较轻的请填写体积</view>
+      <view>2.实际的费用以派送员上门开单的金额为准</view>
+    </view>
+  </view>
+  <view></view>
+  <view class='cargoWrap'>
+    <view>
+      <picker bindchange="bindPickerChange" value='{{index}}' range="{{array}}">
+        <view class="picker">
+          <text>货物类别</text>
+          <view class='inputBorder'>{{array[index]}}</view>
+        </view>
+      </picker>
+    </view>
+    <view>
+      <text>货物名称</text>
+      <view class='btnWrap'>
+        <button size='mini' wx:key='name_tag' wx:for='{{nameArr}}' bindtap='nameTap' class='{{nameSelectedId == item.id ? "nameSelected" : ""}}' data-name='{{item.name_tag}}' data-id='{{item.id}}'>{{item.name_tag}}</button>
+      </view>
+    </view>
+    <view hidden='{{cargoHidden}}'>
+      <text>货物名称</text>
+      <input bindinput='cargoNumChange' class='inputBorder' value='{{goods_name}}' placeholder='请输入货物名称'></input>
+    </view>
+    <view>
+      <text>货物件数</text>
+      <input class='inputBorder' value='{{num}}' bindinput='numChange'></input>
+    </view>
+    <view>
+      <button class='btnColor' bindtap='setCargoInfo'>确定</button>
+    </view>
+  </view>
+</view>

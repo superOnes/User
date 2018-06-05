@@ -1,0 +1,22 @@
+<!--pages/businessDetail/businessDetail.wxml-->
+<view class='bussinessWrap'>
+  <view>
+    <text>本月交易记录</text>
+    <text>支出：{{outpay}} 收入：{{inpay}}</text>
+  </view>
+  <block wx:if="{{haveDataIs}}">
+    <view class='bussinessList' wx:for='{{datas}}' wx:key="i">
+      <view>
+        <text>运费{{item.record_type}}</text>
+        <text>{{item.submit_time}}</text>
+      </view>
+      <text class='{{ item.record_type == "充值" ? "textColor" : ""}}'>{{item.money}}</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='noData'>
+      <icon><image src='../../images/no_deal@2x.png'></image></icon>
+      <text>您没有相关的交易记录</text>
+    </view>
+  </block>
+</view>

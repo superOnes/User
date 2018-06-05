@@ -1,0 +1,23 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='walletWrap'>
+  <view>
+    <view>当前余额</view>
+    <view><text>￥{{payValue}}</text></view>
+    <view>
+      <button size='mini' class='btnColor' bindtap='payBtn'>充值</button>
+    </view>
+  </view>
+  <navigator hover-class='none' url='/pages/businessDetail/businessDetail'>
+    <text>交易明细</text>
+    <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+  </navigator>
+  <navigator hover-class='none' url='/pages/payPsd/payPsd'>
+    <text>支付密码</text>
+    <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+  </navigator>
+
+  <modal hidden="{{hiddenmodalput}}" title="充值金额" confirm-text="确认" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+   <text>￥：</text>
+   <input type='number' value='{{goPayValue}}' bindinput='goPayValue' placeholder="请输入金额" maxlength='5'/>
+  </modal>
+</view>

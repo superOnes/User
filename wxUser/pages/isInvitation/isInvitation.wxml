@@ -1,0 +1,9 @@
+<!--pages/isInvitation/isInvitation.wxml-->
+<view>
+  <form bindsubmit='formsubmit' class='formWrap'>
+    <view>
+      <input name='invitecode' type='number' class='inputBorder' placeholder='请输入邀请码'/>
+    </view>
+    <view><button class='btnColor' form-type='submit'>确定</button></view>
+  </form>
+</view>

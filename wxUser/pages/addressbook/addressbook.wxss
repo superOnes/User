@@ -1,0 +1,102 @@
+/* pages/addressbook/addressbook.wxss */
+page{
+  background: #e2e2e2;
+}
+.userMsg{
+  padding: 0 20rpx;
+  background: #fff;
+}
+.userMsg>view{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  color: #666;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.userMsg>view:last-of-type{
+  border: none;
+}
+.userMsg>view label{
+  width: auto;
+  min-width: 160rpx;
+}
+.userMsg>view:nth-child(4) label{
+  min-width: 220rpx;
+}
+.userMsg>view input{
+  color: #000;
+  min-width: calc(100% - 200rpx);
+  padding: 0;
+}
+
+.userMsg>.radio-group{
+  display: inline-block;
+  padding: 30rpx 20rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.userMsg>.radio-group label{
+  display: flex;
+  display: -webkit-flex;
+  align-content: center; 
+}
+
+.noopsyche{
+  padding: 0 40rpx;
+  margin-top: 40rpx;
+  background: #fff;
+  min-height: 580rpx;
+}
+.noopsyche view{
+  display: flex;
+  display: -webkit-flex;
+}
+.noopsyche view:first-child text:first-child{
+  font-size: 28rpx;
+  color: #f90;
+}
+.noopsyche>view:first-child text{
+  min-width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 80rpx;
+  font-size: 30rpx;
+}
+.noopsyche view textarea{
+  width: 100%;
+  font-size: 32rpx;
+}
+.noopsyche view:last-of-type{
+  padding: 10rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.noopsyche view view icon image{
+  display: block;
+  margin-right: 20rpx;
+  width: 36rpx;
+  height: 30rpx;
+}
+.noopsyche view view text{
+  font-size: 30rpx;
+  color: #999;
+}
+.noopsyche view view button{
+  display: inline-block;
+  border-color: #ccc;
+  background: rgba(250, 119, 55, .7);
+  color: #fff;
+}
+.noopsyche view view:last-child text{
+  margin-right: 30rpx;
+}
+.noopsyche>button{
+  display: block;
+  margin-top: 40rpx;
+  border-color: #fa7737;
+  background: #fa7737;
+  color: #fff;
+}

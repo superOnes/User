@@ -1,0 +1,48 @@
+<!--pages/searchOrder/searchOrder.wxml-->
+<view>
+  <view class='searchWrap'>
+    <icon><image src='../../images/search@2x.png'></image></icon>
+    <input bindinput='bindInput' class='inputBorder' placeholder='请输入要查询的运单号'></input>
+  </view>
+  <scroll-view hidden='{{!isEmpty}}' class='cardWrap' scroll-y='true' bindscrolltolower="bindscrolltolower">
+  <view class='every' wx:key="every" wx:for="{{orderList}}" data-code='{{item.order_code}}' bindtap='detailTap'>
+    <view class='cardWrapEvery'>
+      <image wx:if="{{item.status_str == '待运输'}}" src='../../images/my_order_awaiting_delivery@2x.png'></image>
+      <image wx:elif="{{item.status_str == '已签收'}}" src='../../images/my_order_have_the_goods@2x.png'></image> 
+      <image wx:elif="{{item.status_str == '已取消'}}" src='../../images/my_order_cancel@2x.png'></image>
+      <image wx:elif="{{item.status_str == '运输中'}}"  src='../../images/my_order_in_the_transport@2x.png'></image>
+       <image wx:else src='../../images/my_order_to_tcomplete@2x.png'></image> 
+      <view>
+        <text>订单编号：{{item.order_code}}</text>
+        <icon><image src='../../images/my_order_extend@2x.png'></image></icon>
+      </view>
+      <view class='orderMsg'>
+        <view>
+          <text>{{item.start_city_str}}</text>
+          <text>{{item.consignor_name}}</text>
+        </view>
+        <view>
+          <image src='../../images/my_order_arrow@2x.png'></image>
+          <view class='{{item.is_pay == "1" ? "cancelColor" : (item.status_custom == "0" ? "statusColor" : "")}}' data-orderCode='{{item.order_code}}' catchtap='{{item.is_pay == "1" ? "" : "goPayMsg"}}'><text>{{item.is_pay == "1" ? "已支付" : (item.status_custom == "0" ? "点击支付" : "已取消")}}</text></view>
+          <!-- <view class='{{item.status_custom == "0" ? "statusColor" : (item.status_custom == "1" ? "cancelColor" : "")}}' data-orderCode='{{item.order_code}}' catchtap='{{item.status_custom == "1" ? "" : "goPayMsg"}}'><text>{{item.status_custom == "0" ? "点击支付" : (item.is_pay == "1" ? "已支付" : "已取消")}}</text></view> -->
+        </view>
+        <view>
+          <text>{{item.end_city_str}}</text>
+          <text>{{item.consignee_name}}</text>
+        </view>
+      </view>
+      <view>
+        <text>{{item.refresh_time}}</text>
+        <text hidden='{{item.status_str == "已签收"}}' catchtap='{{item.status_custom == "0" ? "handleCon" : "deleteOrder"}}' data-orderId='{{item.id}}'>{{item.status_custom == "0" ? "取消运单" : (item.status_custom == "1" ? "删除" : "已支付")}}</text>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+  <modal hidden="{{hiddenmodalput}}" title="请输入您要取消的原因" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" data-orderId="{{modalId}}">
+      <textarea cursor-spacing='50' bindinput='remarksChange' type='text' placeholder="请输入内容" value='{{remarks}}'></textarea>
+  </modal>
+  <view hidden='{{isEmpty}}' class='isEmpty'>
+    <image src='../../images/no_orders@2x.png'></image>
+    <view>对不起，没有您的相关运单!</view>
+  </view>
+</view>

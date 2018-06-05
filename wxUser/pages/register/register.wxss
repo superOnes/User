@@ -1,0 +1,69 @@
+/* pages/register/register.wxss */
+.logoWrap{
+  display: block;
+  margin-bottom: 50rpx;
+}
+.logoWrap image{
+  display: block;
+  margin: 30rpx auto;
+  width: 200rpx;
+  height: 250rpx;
+}
+
+.tabRegister{
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 10rpx 0;
+}
+.tabRegister>view{
+  width: 50%;
+  text-align: center;
+}
+.tabRegister>view text{
+  display: block;
+  margin: -10rpx auto;
+  width: 80%;
+  line-height: 80rpx;
+}
+.tabRegister>view .active{
+  border-bottom: 2px solid #fa7737;
+  color: #fa7737;
+}
+
+.inputWrap{
+  width: 70%;
+  margin: 40rpx auto;
+}
+.inputWrap>view{
+  position: relative;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.inputWrap>view>view{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background: #2298f0;
+  color: #fff;
+  padding: 25rpx 40rpx;
+  font-size: 28rpx;
+}
+.inputWrap>view>.canNOt{
+  background: #999;
+}
+.inputWrap view input{
+  display: block;
+  width: calc(100% - 50rpx);
+  padding: 15rpx 20rpx;
+}
+.inputWrap view button{
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}

@@ -1,0 +1,157 @@
+/* pages/searchOrder/searchOrder.wxss */
+page{
+  background: #f2f2f2;
+}
+.searchWrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #f2f2f2;
+}
+.searchWrap icon image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.searchWrap icon{
+  padding: 15rpx 20rpx;
+}
+.searchWrap input{
+  width: calc(100% - 100rpx);
+  border: none;
+}
+
+.cardWrap{
+  display: block;
+  height: 1040rpx;
+  margin-top: 60rpx;
+  overflow: hidden;
+}
+.cardWrap .every{
+  overflow: hidden;
+  padding: 40rpx 20rpx 0;
+}
+.cardWrap .cardWrapEvery{
+  position: relative;
+  padding: 0 20rpx;
+  border-radius: 5px;
+  border: 1px solid #ffe3d5;
+  background: #fff;
+}
+.cardWrap .cardWrapEvery>image{
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+  width: 48rpx;
+  height: 120rpx;
+}
+.cardWrap .cardWrapEvery>view:first-of-type{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10rpx;
+}
+.cardWrap .cardWrapEvery view text{
+  font-size: 28rpx;
+  color: #666;
+}
+.cardWrap .cardWrapEvery view icon{
+  margin: 0 20rpx;
+}
+.cardWrap .cardWrapEvery view icon image{
+  display: block;
+  width: 15rpx;
+  height: 25rpx;
+}
+.orderMsg{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.orderMsg>view{
+  position: relative;
+  width: 30%;
+}
+.orderMsg>view>image{
+  position: absolute;
+  width: 90%;
+  height: 8px;
+  top: 60rpx;
+  left: 6%;
+}
+.orderMsg>view>text{
+  display: block;
+  line-height: 50rpx;
+  text-align: center;
+}
+.orderMsg>view>text:last-child{
+  color: #333;
+}
+.orderMsg>view:nth-child(2){
+  margin: 40rpx 0;
+  width: 40%;
+  text-align: center;
+}
+.orderMsg>view>view{
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  line-height: 120rpx;
+}
+.orderMsg>view>view{
+  background: none;
+  border: 1px solid #adbb51;
+}
+.orderMsg>view>view text{
+  color: #adbb51;
+}
+.orderMsg>view>.statusColor{
+  position: relative;
+  z-index: 999;
+  border: none;
+  background: #378efa;
+}
+.orderMsg>view>.statusColor text{
+  color: #fff;
+}
+.orderMsg>view>.cancelColor{
+  border: 1px solid #87acf7;
+}
+.orderMsg>view>.cancelColor text{
+  color: #87acf7;
+}
+
+.cardWrapEvery>view:last-of-type {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.cardWrapEvery>view:last-of-type text{
+  line-height: 80rpx;
+}
+.cardWrapEvery>view:last-of-type text:last-child{
+  margin-right: 20rpx;
+  color: #fa7737;
+  font-size: 32rpx;
+}
+
+.isEmpty{
+  width: 100%;
+  margin-top: 300rpx;
+}
+.isEmpty image{
+  display: block;
+  margin: 0 auto;
+  width: 300rpx;
+  height: 300rpx;
+}
+.isEmpty view{
+  text-align: center;
+  margin-top: 40rpx;
+  color: #F56C42;
+}

@@ -1,0 +1,43 @@
+/* pages/index/index.wxss */
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.page_btn{
+  position: relative;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 10px 0;
+}
+.page_btn navigator{
+  border-radius: 5px;
+  padding: 0 25rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.page_btn navigator:nth-child(2){
+  border: none;
+  background: #1AAD19;
+  color: #fff;
+}
+.mapWrap{
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: calc(100% - 100rpx);
+}
+.mapWrap .maps{
+  width: 100%;
+  height: 100%;
+}

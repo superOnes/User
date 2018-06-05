@@ -1,0 +1,2 @@
+<!--pages/map/map.wxml-->
+<web-view src='http://m.test.paigekuaiyun.com/wap/goodsPosition.html?ordercode={{order_code}}'></web-view>

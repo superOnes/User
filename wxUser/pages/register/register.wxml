@@ -1,0 +1,34 @@
+<!--pages/register/register.wxml-->
+<view>
+  <view class='logoWrap'>
+    <image src='../../images/logo.png'></image>
+  </view>
+<!-- tab切换 -->
+  <view class='tabRegister'>
+    <view bindtap='tabToggle'><text class='{{person ? "" : "active"}}'>个人</text></view>
+    <view bindtap='tabToggle1'><text class='{{Notperson ? "" : "active"}}'>企业</text></view>
+  </view>
+  <view>
+    <form bindsubmit='formSubmit'>
+      <view class='inputWrap'>
+        <view hidden='{{Notperson}}'>
+          <input name='company_name' value='{{company_name}}' class='inputBorder' placeholder='请输入企业名称' />
+        </view>
+        <view>
+          <input name='name' class='inputBorder' placeholder='请输入姓名' />
+        </view>
+        <view>
+          <input name='loginname' type='number' class='inputBorder' bindinput='inputChange' value='{{mobile}}' placeholder='请输入手机号码' />
+        </view>
+        <view>
+          <input name='checkcode' class='inputBorder' placeholder='短信验证码' />
+          <view bindtap='getCode' class='{{verificationMsg == "获取验证码" ? "" : "canNOt"}}'>{{verificationMsg}}</view>
+        </view>
+        <view>
+          <input name='password' class='inputBorder' password='true' placeholder='请设置密码（6-10位数字字母结合）' />
+        </view>
+        <view><button form-type='submit' class='btnColor'>确定</button></view>
+      </view>
+    </form>
+  </view>
+</view>

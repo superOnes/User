@@ -1,0 +1,102 @@
+/* pages/payMsg/payMsg.wxss */
+page{
+  background: #f2f2f2;
+}
+.one{
+  padding: 0 30rpx;
+  margin: 20rpx 0;
+  background: #fff;
+}
+.one>view, .one>navigator{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #e2e2e2;
+}
+.one>view text, .one>navigator text{
+  line-height: 70rpx;
+  color: #333;
+  font-size: 30rpx;
+}
+.one>navigator view{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.one>navigator view image{
+  display: block;
+  width: 15rpx;
+  height: 25rpx;
+  margin: 0 10rpx;
+}
+.one>view text:last-child, .one>navigator view text{
+  color: #ee231e;
+}
+.one>view:last-of-type{
+  border: none;
+}
+.one>view:last-of-type text{
+  color: #333;
+}
+.one>view:last-of-type text:last-child text{
+  color: #ee231e;
+  font-size: 40rpx;
+  font-weight: 500;
+}
+
+.two{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10rpx 20rpx;
+  background: #fff;
+}
+.two image{
+  display: block;
+  width: 46rpx;
+  height: 46rpx;
+}
+.two image:last-of-type{
+  width: 36rpx;
+  height: 36rpx;
+}
+.two>view{
+  width: calc(100% - 200rpx);
+}
+.two view view{
+  font-size: 26rpx;
+  line-height: 40rpx;
+}
+
+.goPay{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 30rpx);
+  background: #fff;
+  padding-left: 30rpx;
+}
+.goPay view{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  color: #ee231e;
+  font-size: 45rpx;
+}
+.goPay view input{
+  width: 150rpx;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+.goPay view:last-child{
+  padding: 20rpx 30rpx;
+  background: #fa7737;
+  color: #fff;
+  font-size: 30rpx;
+}

@@ -1,0 +1,68 @@
+<!--pages/orderMsg/orderMsg.wxml-->
+<view>
+  <view class='tab'>
+    <view bindtap='tabToggle'><text class='{{listOrDetail ? "" : "active"}}'>订单进度</text></view>
+    <view bindtap='tabToggle1'><text class='{{listOrDetail1 ? "" : "active"}}'>订单详情</text></view>
+  </view>
+  <view class='orderList' hidden='{{listOrDetail}}'>
+    <view>
+      <view class='listEvery' wx:for='{{orderList}}' wx:key='key' wx:for-index="idx">
+        <view>
+          <image wx:if="{{idx == 0}}" class='{{idx == 0 ? "big" : ""}}' src='../../images/billstatusy.png'></image>
+          <image wx:else src='../../images/billstatus.png'></image>
+        </view>
+        <view>
+          <view>{{item.description}}</view>
+          <view>{{item.submit_time}}</view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <button size='mini' class='btnColor' bindtap='goMap'>地图跟踪</button>
+    </view>
+  </view>
+  <view class='orderDetail' hidden='{{listOrDetail1}}'>
+    <view>
+      <view class='one'>
+        <view class='order_code'>订单编号：{{detail.order_code}}</view>
+        <view>
+          <text>发货地</text>
+          <view>
+            <view><text style='margin-right: 10rpx;'>{{detail.consignor_name}}</text><text>{{detail.consignor_mobile}}</text></view>
+            <view>{{detail.start_province_str}}{{detail.start_city_str}}{{detail.start_area_str}}{{detail.start_address}}</view>
+          </view>
+        </view>
+        <view>
+          <text>收货地</text>
+          <view>
+            <view><text style='margin-right: 10rpx;'>{{detail.consignee_name}}</text><text>{{detail.consignee_mobile}}</text></view>
+            <view>{{detail.end_province_str}}{{detail.end_city_str}}{{detail.end_area_str}}{{detail.end_address}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='two'>
+        <view>
+          <view><image src='../../images/order_information_goods@2x.png'></image><text>{{detail.goods_name}}</text></view>
+          <view><image src='../../images/order_information_weight@2x.png'></image>件数：<text>{{detail.goods_count}}</text></view>
+        </view>
+        <view><image src='../../images/order_information_number_of_packages@2x.png'></image>重量：<text>{{detail.goods_weight}}千克/{{detail.goods_volume}}方</text></view>
+      </view>
+      <view class='three'>
+        <text>揽收距离：{{detail.collecting_distance ? detail.collecting_distance + "km" : ""}}</text>
+        <text>干线距离：{{detail.transit_distance ? detail.transit_distance + "km": ""}}</text>
+        <text>派送距离：{{detail.delivery_distance ? detail.delivery_distance + "km" : ""}}</text>
+      </view>
+      <view class='four'>
+        <view>备注信息：</view>
+        <view>支付方式：{{payCon}}</view>
+        <view>运费价格：￥{{detail.deal_price/100}}</view>
+        <view>优惠券：{{detail.coupon_money}} 满减：{{detail.full_delivery_money}}</view>
+      </view>
+      <view class='five'>
+        <view>已付:￥<text>{{detail.actual_money/100}}</text> 需付:￥<text>{{detail.deal_price/100 - detail.actual_money/100}}</text></view>
+        <view>{{detail.refresh_time}}</view>
+      </view>
+    </view>
+    <button class='btnColor' bindtap='callPhone'>如有疑问请联系客服</button>
+  </view>
+</view>

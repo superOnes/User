@@ -1,0 +1,11 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <view class='page_btn'>
+    <navigator hover-class="none" url='/pages/makeOrder/makeOrder'>在线下单</navigator>
+    <navigator hover-class="none" bindtap='callPhone'>呼叫派哥</navigator>
+    <navigator hover-class="none" url='/pages/online/online'>在线咨询</navigator>
+  </view>
+   <view class='mapWrap'>
+    <map class='maps' show-location='true' longitude='{{longitude}}' latitude='{{latitude}}'></map>
+  </view>
+</view>

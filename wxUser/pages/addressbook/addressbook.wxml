@@ -1,0 +1,51 @@
+<!--pages/addressbook/addressbook.wxml-->
+<form bindsubmit='formSubmit'>
+  <view class='userMsg'>
+    <view>
+      <label for='{{personWhich}}_name'>姓名：</label>
+      <input id='{{personWhich}}_name' name='{{personWhich}}_name' value='{{name}}' placeholder='请输入您的姓名'/>
+    </view>
+    <view>
+      <label for='{{personWhich}}_mobile'>联系方式：</label>
+      <input type='number' id='{{personWhich}}_mobile' name='{{personWhich}}_mobile' value='{{mobile}}' placeholder='请输入您的手机号'/>
+    </view>
+    <view>
+      <label for='{{whichType}}_address'>{{status}}：</label>
+      <input disabled bindtap='openAddress' id='{{whichType}}_address' value='{{address}}' placeholder='请输入您的{{status}}' maxlength='20'></input>
+      <input name="{{whichType}}_province" type='text' style='display:none;' value='{{province}}'/>
+      <input name="{{whichType}}_city" type='text' style='display:none;' value='{{city}}'/>
+      <input name="{{whichType}}_area" type='text' style='display:none;' value='{{area}}'/>
+      <input name="{{whichType}}_gps_x" type='text' style='display:none;' value='{{gps_x}}'/>
+      <input name="{{whichType}}_gps_y" type='text' style='display:none;' value='{{gps_y}}'/>
+    </view>
+    <view>
+      <label for='{{whichType}}_full_address'>楼层及楼牌号：</label>
+      <textarea cursor-spacing='50' name="{{whichType}}_full_address" id='{{whichType}}_full_address' value='{{full_address}}' placeholder='请输入您的楼层及楼牌号'></textarea> 
+    </view>
+    <radio-group class="radio-group" bindtap="radioChange" wx:if="{{addShow}}">
+      <label class="radio">
+        <radio checked="{{isChecked}}"/><text>添加到地址簿</text>
+      </label>
+    </radio-group>
+  </view>
+  <view class='noopsyche'>
+    <view>
+      <text>智能填写</text>
+      <text>也可以粘贴整段文字，自动识别姓名、联系方式、地址</text>
+    </view>
+    <view>
+      <textarea cursor-spacing='50' placeholder='如：张三，1874565236，广东省深圳市柳河区发财大厦5号101室' value='{{addressContent}}' bindinput='addressContent'></textarea>
+    </view>
+    <view>
+      <view>
+        <icon><image src='../../images/Send_-message_picture@2x.png'></image></icon>
+        <text bindtap='openCamera'>图片识别</text>
+      </view>
+      <view>
+        <text bindtap='clearAddressTextarea'>清除</text>
+        <button size='mini' bindtap='doIt'>智能识别</button>
+      </view>
+    </view>
+    <button formType='submit'>确 定</button>
+  </view>
+</form>

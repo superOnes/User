@@ -1,0 +1,56 @@
+<!--pages/payMsg/payMsg.wxml-->
+<view>
+  <view class='one'>
+    <view>
+      <text>运单编号：</text>
+      <text>{{detail.order_code}}</text>
+    </view>
+    <view>
+      <text>总运费：</text>
+      <text>+￥{{firstPay}}</text>
+    </view>
+    <navigator hover-class='none' url='/pages/coupon/coupon'>
+      <text>优惠券：</text>
+      <view>
+        <text>-￥{{coupon_money}}</text>
+        <image src='../../images/comm_back_right@2x.png'></image>
+      </view>
+    </navigator>
+    <view>
+      <text>满减</text>
+      <text>-￥{{fulldelivery == '0' ? "0.00" : fulldelivery}}</text>
+    </view>
+    <view>
+      <text>已付：</text>
+      <text>-￥{{actual_money == '0' ? "0.00" : actual_money}}</text>
+    </view>
+    <view>
+      <text>揽收距离：</text>
+      <text>{{detail.collecting_distance ? detail.collecting_distance : "暂无距离"}} km</text>
+    </view>
+    <view>
+      <text>中转距离：</text>
+      <text>{{detail.transit_distance ? detail.transit_distance : "暂无距离"}} km</text>
+    </view>
+    <view>
+      <text>派送距离：</text>
+      <text>{{detail.delivery_distance ? detail.delivery_distance : "暂无距离"}} km</text>
+    </view>
+    <view>
+      <text></text>
+      <text>需付：<text>{{lastPay}}</text></text>
+    </view>
+  </view>
+  <view class='two'>
+    <image src='../../images/pay_wechat_payment@2x.png'></image>
+    <view>
+      <view>微信支付</view>
+      <view>推荐安装5.0及以上版本使用</view>
+    </view>
+    <image src='../../images/pay_choose_p@2x.png'></image>
+  </view>
+  <view class='goPay'>
+    <view>￥ <input bindinput='lastPayChange' value='{{lastPay}}'></input></view>
+    <view bindtap='goPay'>去支付</view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/otherMsg/otherMsg.wxml-->
+<view class='otherMsg'>
+  <view>
+    派哥快运客户版是个人运单管理软件，免费为您提供自助下单、订单管理、服务查询等一站式掌上便捷货运服务。
+  </view>
+  <view>
+    <icon>
+      <image src="../../images/aboutlogo.jpg"></image>
+    </icon>
+    <text>派哥快运客户端</text>
+  </view>
+  <view>
+    <text>Copyright©2017</text>
+    <text>Beijing Tiancheng Hengtong Logisics co.,LTD.</text>
+    <text>北京天成恒通物流有限公司</text>
+  </view>
+</view>

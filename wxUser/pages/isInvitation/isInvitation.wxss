@@ -1,0 +1,15 @@
+/* pages/isInvitation/isInvitation.wxss */
+.formWrap{
+  display: block;
+  width: 80%;
+  margin: 100rpx auto;
+}
+.formWrap view{
+  margin-bottom: 50rpx;
+}
+.formWrap view input{
+  padding: 15rpx;
+}
+.formWrap view button{
+  border-radius: 5px;
+}

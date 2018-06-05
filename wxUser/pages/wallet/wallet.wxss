@@ -1,0 +1,47 @@
+/* pages/wallet/wallet.wxss */
+.walletWrap>view{
+  display: block;
+  padding: 20rpx 30rpx;
+  background: #fef2ec;
+}
+.walletWrap view view{
+  display: block;
+  font-size: 28rpx;
+}
+.walletWrap view view:nth-child(2){
+  text-align: center;
+}
+.walletWrap view view text{
+  color: #fa7737;
+  line-height: 100rpx;
+  font-size: 60rpx;
+}
+.walletWrap view view button{
+  border-radius: 5px;
+  border: none;
+}
+.walletWrap view view:last-child{
+  text-align: right;
+}
+
+.walletWrap navigator{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.walletWrap navigator text{
+  font-size: 30rpx;
+}
+.walletWrap navigator icon image{
+  display: block;
+  width: 15rpx;
+  height: 25rpx;
+}
+
+modal input, modal text{
+  display: inline-block;
+  vertical-align: middle;
+}

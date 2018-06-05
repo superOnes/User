@@ -1,0 +1,29 @@
+<!--pages/user/user.wxml-->
+<view>
+  <view class='imagesWrap'>
+    <image src='../../images/user.png'></image>
+    <text>{{name}}</text>
+  </view>
+  <view class='settingWrap'>
+    <navigator hover-class="none" url='/pages/wallet/wallet'>
+      <icon><image src='../../images/mine_wallet@2x.png'></image></icon>
+      <text>我的钱包</text>
+      <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+    </navigator>
+    <navigator hover-class="none" url='/pages/booklistselect/booklistselect'>
+      <icon><image src='../../images/maddress.png'></image></icon>
+      <text>我的地址簿</text>
+      <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+    </navigator>
+    <navigator hover-class="none" url='/pages/billmanage/billmanage'>
+      <icon><image src='../../images/mine_invoice@2x.png'></image></icon>
+      <text>发票管理</text>
+      <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+    </navigator>
+    <navigator hover-class="none" url='/pages/setting/setting'>
+      <icon><image src='../../images/mine_setting@2x.png'></image></icon>
+      <text>设置</text>
+      <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+    </navigator>
+  </view>
+</view>

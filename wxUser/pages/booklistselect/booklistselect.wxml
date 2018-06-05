@@ -1,0 +1,35 @@
+<!--pages/booklistselect/booklistselect.wxml-->
+<view>
+  <radio-group class="radio-group">
+    <view class='addressList' wx:for='{{addressListArr}}' wx:key='addressListArr'>
+      <view class='addressMsg' bindtap='selectThis' data-item='{{item}}'>
+        <view>
+          <text>{{item.name}}</text>
+          <text>{{item.mobile}}</text>
+        </view>
+        <view>
+          <text>{{item.province_str}}{{item.city_str}}{{item.area_str}}{{item.address}}</text>
+        </view>
+      </view>
+      <view class='addressSet'>
+        <view>
+            <label class="radio" bindtap="radioChange" data-id='{{item.id}}'>
+              <radio value="1" checked="{{item.isdefault == 1 ? true : false}}"/>
+              <text>设置为默认地址</text>
+            </label>
+        </view>
+        <view>
+          <button size='mini' data-id='{{item.id}}' bindtap='editAddress'>编辑</button>
+          <button size='mini' data-id='{{item.id}}' bindtap='deleteAddress'>删除</button>
+        </view>
+      </view>
+    </view>
+    <view hidden='{{isEmpty}}' class='isEmpty'>
+      <image src='../../images/no_orders@2x.png'></image>
+      <view>对不起，您还没有地址!</view>
+    </view>
+  </radio-group>
+  <navigator hidden='{{showNew}}' class='newAdd' url='/pages/addressbook/addressbook?add=true'>
+    <button>新增地址</button>
+  </navigator>
+</view>

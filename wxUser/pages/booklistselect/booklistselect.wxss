@@ -1,0 +1,79 @@
+/* pages/booklistselect/booklistselect.wxss */
+page{
+  background: #f2f2f2;
+}
+.addressList{
+  margin-bottom: 40rpx;
+  background: #fff;
+}
+.radio-group{
+  padding-bottom: 100rpx;
+}
+.addressList view{
+  padding: 10rpx;
+}
+.addressList .addressMsg{
+  display: block;
+  border-bottom: 1.5px solid #f2f2f2;
+}
+.addressList>view, .addressList .addressMsg view{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: top;
+}
+.addressList .addressMsg text{
+  display: block;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.radio-group radio {
+  margin: 0;
+}
+.addressList .addressSet{
+  padding: 5rpx 10rpx;
+  align-items: center;
+}
+.addressList .addressSet .radio-group .radio text{
+  font-size: 28rpx;
+}
+.addressList .addressSet view{
+  display: flex;
+  display: -webkit-flex;
+}
+.addressList .addressSet button{
+  display: block;
+  margin-left: 15rpx;
+}
+.addressList .addressSet button:last-child{
+  color: #fa7737;
+}
+
+.newAdd{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+}
+.newAdd button{
+  border-radius: 0;
+  background: #FA7737;
+  color: #fff;
+}
+.isEmpty{
+  width: 100%;
+  margin-top: 300rpx;
+}
+.isEmpty image{
+  display: block;
+  margin: 0 auto;
+  width: 300rpx;
+  height: 300rpx;
+}
+.isEmpty view{
+  text-align: center;
+  margin-top: 40rpx;
+  color: #F56C42;
+}

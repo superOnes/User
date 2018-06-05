@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/coupon/coupon",
+    "pages/searchOrder/searchOrder",
+    "pages/wallet/wallet",
+    "pages/makeOrder/makeOrder",
+    "pages/setting/setting",
+    "pages/booklistselect/booklistselect",
+    "pages/isInvitation/isInvitation",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/backpassword/backpassword",
+    "pages/orderMsg/orderMsg",
+    "pages/billmanage/billmanage",
+    "pages/getbillinfo/getbillinfo",
+    "pages/payMsg/payMsg",
+    "pages/addressbook/addressbook",
+    "pages/goodsinfo/goodsinfo",
+    "pages/user/user",
+    "pages/payPsd/payPsd",
+    "pages/businessDetail/businessDetail",
+    "pages/editPassword/editPassword",
+    "pages/online/online",
+    "pages/otherMsg/otherMsg",
+    "pages/billdes/billdes",
+    "pages/map/map"
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "派哥快运",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/searchOrder/searchOrder",
+        "text": "查询运单",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search1.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "下单",
+        "iconPath": "images/makeOrder.png",
+        "selectedIconPath": "images/makeOrder1.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "images/userTab.png",
+        "selectedIconPath": "images/userTab1.png"
+      }
+    ]
+  }
+}

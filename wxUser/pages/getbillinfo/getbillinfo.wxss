@@ -1,0 +1,30 @@
+/* pages/getbillinfo/getbillinfo.wxss */
+.msgWrap text{
+  display: block;
+  padding: 10rpx 0;
+  background: #f2f2f2;
+}
+.msgWrap .invoiceMsg, .msgWrap .peopleMsg{
+  display: block;
+}
+.msgWrap view view:first-child{
+  font-size: 36rpx;
+  color: #fa7737;
+  line-height: 70rpx;
+}
+.msgWrap view view{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  padding: 10rpx 40rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #e5e5e5;
+}
+.msgWrap .submit{
+  padding: 0 40rpx;
+  margin-top: 70rpx;
+}
+.msgWrap .submit button{
+  border-radius: 5px;
+  line-height: 80rpx;
+}

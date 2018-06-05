@@ -1,0 +1,97 @@
+/* pages/coupon/coupon.wxss */
+page{
+  background: #f2f2f2;
+}
+
+.NotValid, .valid{
+  margin-top: 80rpx;
+}
+.radio{
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  padding: 30rpx;
+}
+.radio view{
+  width: 10%;
+}
+.radio view>radio{
+  margin: 0;
+}
+.radio>.backType{
+  position: relative;
+  width: 545rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  padding-right: 20rpx;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+.radio .money>text{
+  display: block;
+  padding-top: 30rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+.radio>.backType>view{
+  position: relative;
+  text-align: center;
+  width: 150rpx;
+  font-size: 30rpx;
+}
+.radio>.backType>view image{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  left: 30rpx;
+  top: -10rpx;
+}
+.radio>.backType>.money{
+  width: calc(100% - 165rpx);
+  padding-right: 15rpx;
+  text-align: left;
+  border-right: 2px dashed rgba(255,255,255,.3);
+}
+.money>text text{
+  font-size: 50rpx;
+}
+
+
+.backType:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  z-index: -1;
+}
+.backType1{
+  background: radial-gradient(transparent 0, transparent 5px, #D24161 5px);
+  background-size: 15px 15px;
+  background-position: 9px 3px;
+}
+.backType1:before {
+  background-color: #D24161;
+}
+.backType2{
+  background: radial-gradient(transparent 0, transparent 5px, #b7b8b7 5px);
+  background-size: 15px 15px;
+  background-position: 9px 3px;
+}
+.backType2:before {
+  background-color: #b7b8b7;
+}
+
+.NotValid form button{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f9495d;
+  color: #fff;
+  border-radius: 0;
+}

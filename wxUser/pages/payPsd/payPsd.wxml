@@ -1,0 +1,31 @@
+<!--pages/payPsd/payPsd.wxml-->
+<view class='wrap'>
+  <view>
+    <text>当前登录账户</text>
+    <text>{{name}}</text>
+  </view>
+  <form wx:if='{{ispaypsd}}' class='formWrap' bindsubmit='formSubmit'>
+    <input name='mobile' hidden='true' value='{{name}}'></input>
+    <view>
+      <input name='checkcode' placeholder='短信验证码'></input>
+      <button bindtap='getCode' disabled='{{msgTypeIs}}'>{{msgType}}</button>
+    </view>
+    <view>
+      <input password='true' name='password' placeholder='请设置支付密码'></input>
+    </view>
+    <view><button form-type='submit' class='btnColor'>保存</button></view>
+  </form>
+  <form wx:else class='formWrap1' bindsubmit='formSubmit1'>
+    <view>
+      <input name="oldpsd" placeholder='请输入原支付密码'></input>
+    </view>
+    <view>
+      <input password='true' name="newpass" placeholder='请输入新支付密码'></input>
+    </view>
+    <view>
+      <input password='true' name="qrnewpass" placeholder='请再次输入新支付密码'></input>
+    </view>
+    <view class='forgetPassword'><text bindtap='forgetPassword'>忘记支付密码？</text></view>
+    <view><button form-type='submit' class='btnColor'>保存</button></view>
+  </form>
+</view>

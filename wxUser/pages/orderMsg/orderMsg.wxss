@@ -1,0 +1,155 @@
+/* pages/orderMsg/orderMsg.wxss */
+page{
+  background: #f2f2f2;
+}
+
+/* 订单进度 */
+.orderList{
+  margin: 100rpx 10rpx 0;
+  padding: 20rpx 40rpx 100rpx;
+  background: #fff;
+  border-radius: 5px;
+}
+.listEvery{
+  display: flex;
+  display: -webkit-flex;
+  align-items: top;
+}
+.listEvery>view:first-child{
+  margin-top: 20rpx;
+  min-width: 40rpx;
+}
+.listEvery>view:last-child{
+  margin-left: -20rpx; 
+  padding: 0 40rpx 20rpx;
+  border-left: 1px solid #e6e6e6;
+}
+.listEvery:last-child>view:last-child{
+  padding-bottom: 0;
+}
+.listEvery>view>image{
+  position: relative;
+  z-index: 999;
+  display: block;
+  margin: 0 auto;
+  width: 15rpx;
+  height: 15rpx;
+}
+.listEvery>view>.big{
+  width: 20rpx;
+  height: 20rpx;
+}
+.listEvery>view view{
+  color: #333;
+  line-height: 50rpx;
+}
+.listEvery>view view:first-child{
+  font-size: 32rpx;
+}
+.listEvery>view view:last-child{
+  font-size: 26rpx;
+}
+.listEvery:last-child>view view:last-child{
+  line-height: 40rpx;
+}
+
+.orderList>view:last-child{
+  text-align: center;
+  margin: 50rpx 0;
+}
+.orderList>view button{
+  border-radius: 5px;
+  font-size: 32rpx;
+}
+
+/* 订单详情 */
+.orderDetail{
+  margin: 100rpx 20rpx;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  font-size: 28rpx;
+  color: #333;
+}
+.orderDetail button{
+  border-radius: 0;
+  line-height: 75rpx;
+}
+.orderDetail>view{
+  padding: 0 30rpx;
+}
+.orderDetail>view>view{
+  border-bottom: 1px solid #e6e6e6;
+}
+.orderDetail>view>view:nth-child(4){
+  border: none;
+}
+.orderDetail .order_code{
+  line-height: 70rpx;
+  margin-left: -10rpx;
+}
+.orderDetail .one>view:first-child{
+  margin: 0;
+}
+.orderDetail .one>view{
+  display: flex;
+  display: -webkit-flex;
+  margin-bottom: 20rpx;
+}
+.orderDetail .one>view text{
+  font-size: 28rpx;
+  width: 130rpx;
+}
+.orderDetail .one>view:nth-child(2)>text{
+  color: #28cd7a;
+}
+.one>view view view{
+  margin-bottom: 10rpx;
+}
+.one>view view text{
+  color: #fa7737;
+}
+
+.two>view{
+  display: flex;
+  display: -webkit-flex;
+  margin: 20rpx 0;
+}
+.two>view>view{
+  width: 50%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+}
+.two>view image{
+  display: block;
+  margin: 0 20rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.two>view text{
+  font-size: 28rpx;
+}
+
+.three>text{
+  display: block;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+
+.four>view{
+  margin: 20rpx 0;
+}
+.five>view{
+  text-align: right;
+  margin: 20rpx 0;
+}
+.five>view text{
+  font-size: 40rpx;
+  color: #fa7737;
+  margin-right: 20rpx;
+}
+.five>view:last-child{
+  color: #999;
+  font-size: 24rpx;
+}

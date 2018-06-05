@@ -1,0 +1,26 @@
+<!--pages/setting/setting.wxml-->
+<view class='settingWrap'>
+  <navigator hover-class="none" url='/pages/otherMsg/otherMsg'>
+    <text>关于派哥快运</text>
+    <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+  </navigator>
+  <navigator hover-class="none">
+    <text>版本信息</text>
+    <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+  </navigator>
+  <navigator hover-class="none" url='{{isInvitation ? "/pages/isInvitation/isInvitation" : ""}}'>
+    <text>邀请码</text>
+    <icon>
+      <image src='../../images/comm_back_right@2x.png' wx:if='{{isInvitation}}'></image>
+      <text wx:else>{{invitationCode}}</text>
+    </icon>
+  </navigator>
+  <navigator hover-class="none" url='/pages/editPassword/editPassword'>
+    <text>修改密码</text>
+    <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+  </navigator>
+  <navigator hover-class="none" bindtap='quit'>
+    <text>退出登录</text>
+    <icon><image src='../../images/comm_back_right@2x.png'></image></icon>
+  </navigator>
+</view>

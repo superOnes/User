@@ -1,0 +1,2 @@
+<!--pages/online/online.wxml-->
+<web-view src='https://static.meiqia.com/dist/standalone.html?_=t&eid=79503'></web-view>

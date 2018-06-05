@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='logoWrap'>
+    <image src='../../images/logo.png'></image>
+  </view>
+  <view class='formWrap'>
+    <form>
+      <input bindinput='loginname' type='number' placeholder='请输入手机号' name='loginname' cursor-spacing='50' value='{{loginname}}'></input>
+      <input password='true' bindinput='password' placeholder='请输入密码' name='password' cursor-spacing='50' value='{{password}}'></input>
+      <view><navigator hover-class='none' url='/pages/backpassword/backpassword'>忘记密码？</navigator></view>
+      <view>
+        <button bindtap='login'>登 录</button>
+      </view>
+      <view><navigator hover-class='none' url='/pages/register/register'>还没有账号？ 立即注册</navigator></view>
+    </form>
+  </view>
+</view>

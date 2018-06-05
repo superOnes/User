@@ -1,0 +1,38 @@
+/* pages/billdes/billdes.wxss */
+.contentWrap>text{
+  display: block;
+  padding: 10rpx 0;
+  background: #f2f2f2;
+}
+.contentWrap>view>view{
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+.contentWrap>view:last-child view{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contentWrap>view>view text{
+  color: #fa7737;
+}
+.contentWrap>view>view>view{
+  line-height: 60rpx;
+  display: flex;
+  display: -webkit-flex;
+}
+.contentWrap>view:last-child>view{
+  margin: 0 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.contentWrap>view>view:first-child{
+  margin: 0;
+  color: #fa7737;
+  border-bottom: 1px solid #ccc;
+  line-height: 70rpx;
+  font-size: 32rpx;
+}
+.contentWrap>view>view>view>view{
+  margin-right: 100rpx;
+}

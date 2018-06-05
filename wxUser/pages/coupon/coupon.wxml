@@ -1,0 +1,53 @@
+<!--pages/coupon/coupon.wxml-->
+<view>
+<!-- tab切换 -->
+  <view class='tab'>
+    <view bindtap='tabToggle'><text class='{{Valid ? "" : "active"}}'>未使用</text></view>
+    <view bindtap='tabToggle1'><text class='{{NotValid ? "" : "active"}}'>已使用</text></view>
+  </view>
+  <!-- 内容区 -->
+  <view class='NotValid' hidden='{{!NotValid}}'>
+    <form bindsubmit='formSubmit'>
+      <radio-group class="radio-group" name="money">
+        <label class="radio" wx:for="{{items}}" wx:key="key" data-id="{{item.id}}" bindtap='couponTap'>
+          <view>
+            <radio value="{{item.money/100}}" wx:if='{{item.is_valid == 1}}'/>
+          </view>
+          <view class='backType {{item.is_valid == 1 ? "backType1" : "backType2"}}'>
+            <view class='money'>
+              <text>￥ <text>{{item.money/100}}</text></text>
+              <text>有效期至：{{item.end_time}}</text>
+            </view>
+            <view>
+              优惠券
+              <image hidden='{{item.is_valid == 1}}' src='../../images/coupons_expired@2x.png'></image>
+            </view>
+          </view>
+        </label>
+      </radio-group>
+      <button form-type='submit'>确认使用</button>
+    </form>
+  </view>
+  <view class='Valid' hidden='{{!Valid}}'>
+    <radio-group class="radio-group" bindchange="radioChange" name="money">
+        <label class="radio" wx:for="{{itemsUsed}}" wx:key="key">
+          <view></view>
+          <view class='backType backType2'>
+            <view class='money'>
+              <text>￥ <text>{{item.money/100}}</text></text>
+              <text>有效期至：{{item.end_time}}</text>
+            </view>
+            <view>
+              优惠券
+              <image src='../../images/coupons_in_use@2x.png'></image>
+            </view>
+          </view>
+        </label>
+      </radio-group>
+  </view>
+  <!-- 为空显示 -->
+  <view hidden='{{isEmpty}}' class='isEmpty'>
+    <image src='../../images/no_orders@2x.png'></image>
+    <view>对不起，您还没有优惠券!</view>
+  </view>
+</view>
